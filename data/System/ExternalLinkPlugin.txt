@@ -1,0 +1,76 @@
+%META:TOPICINFO{author="ProjectContributor" date="1145828137" format="1.0" version="1.1"}%
+---+ External Link Plugin
+*This plugin adds a visual indicator to external links, so users can distinguish outgoing links from site links.*
+
+This will only work for forced links marked up using the so-called double bracket syntax, like:
+<verbatim>
+[[http://external.site][an external site]]
+</verbatim>
+
+URLs that are just written in as http://external.site are left untouched.
+
+%TOC%
+
+---++ Syntax Rules
+Remember to use the double bracket link syntax.
+
+
+---++ Plugin Settings
+Change default settings in [[%SCRIPTURL{"configure"}%/#ExternalLinkPlugin$Extensions][configure]].
+<!--
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
+%TABLE{databg="#ffffff"}%
+| *Configure setting* | *Meaning* | *Default* |
+| ={<nop>MarkerImage}= | link marker image; see below for a list of images  | %PUBURL%/%SYSTEMWEB%/ExternalLinkPlugin/external.gif |
+| ={<nop>CssOnly}= | If set to =1=, does not add an image but writes CSS to the page; use if your users have modern browsers | =0= |
+| ={Debug}=  | If set to =1=, writes debugging info to =data/debug.txt= | =0= |
+
+---+++ Marker images
+%TABLE{databg="#ffffff"}%
+| *Code text* | *Image* |
+| =%<nop>PUBURLPATH%/%<nop>SYSTEMWEB%/ExternalLinkPlugin/external.gif= | %PUBURL%/%SYSTEMWEB%/ExternalLinkPlugin/external.gif |
+| =%<nop>PUBURLPATH%/%<nop>SYSTEMWEB%/ExternalLinkPlugin/diagonal.gif= | %PUBURL%/%SYSTEMWEB%/ExternalLinkPlugin/diagonal.gif |
+
+---+++ CSS Classes
+This plugin adds one CSS class:
+
+%TABLE{databg="#ffffff"}%
+| =.externalLink= | link class to mark outgoing links |
+
+---++ Plugin Installation Instructions
+%$INSTALL_INSTRUCTIONS%
+
+---++ Testing your installation
+
+To test if the plugin is correctly installed, check the following links.
+
+The links in the "If plugin enabled"-column should be marked with a marker if the plugin is functioning correctly.
+
+%TABLE{databg="#ffffff"}%
+| *Code text* | *If plugin enabled* | 
+| =[<nop>[http://foswiki.org][foswiki.org]]= | [[http://foswiki.org][foswiki.org]] |
+
+Unsurprisingly, local links won't be marked as being external. The following links should not be marked:
+
+%TABLE{databg="#ffffff"}%
+| *Code text* | *If plugin enabled* | 
+| =[<nop>[%<nop>ATTACHURL%/bli.png][link to (nonexistent) local attachment]]= | [[%ATTACHURL%/bli.png][link to (nonexistent) local attachment]] |
+
+---++ Plugin Info
+
+|  Authors: | TWiki:Main.AurelioAHeckert, TWiki:Main.NelsonFerraz, TWiki:Main.AntonioTerceiro, Foswiki:Main.ArthurClemens |
+|  Copyright: | &copy; 2005: Aurelio A Heckert, Nelson Ferraz, Antonio Terceiro; 2006: Steffen Poulsen; 2009: Foswiki:Main.ArthurClemens |
+|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
+|  Version: | %$VERSION% |
+|  Release: | %$RELEASE% |
+|  Change History: | <!-- newest on top -->&nbsp; |
+|  02 Oct 2009 | v1.20 - Ported to Foswiki; changed =img= HTML tag to CSS style; moved plugin settings to Configure.  |
+|  24 Apr 2006 | v1.11 - =%<nop>TOPIC% removed from =MARK= definition, wasn't expanded correctly. |
+|  23 Apr 2006 | v1.10 - Incorporated patch from TWiki:Main.TobiasRoeser (only mark external link once in an included scenario). Minor doc brush-up. Changed default marker to =external.gif= graphic. (TWiki:Main.SteffenPoulsen). |
+|  02 Nov 2005 | v1.00 - Initial release |
+|  CPAN Dependencies: | none |
+|  Other Dependencies: | none |
+|  Perl Version: | 5.005 |
+|  Plugin Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
