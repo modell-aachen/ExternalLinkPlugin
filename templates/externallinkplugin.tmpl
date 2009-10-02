@@ -1,0 +1,13 @@
+%{ this is the default header for ExternalLinkPlugin. Variable %markerimage% will be substituted
+with the value of $Foswiki::cfg{Plugins}{ExternalLinkPlugin}{MarkerImage} }%
+
+%TMPL:DEF{externallink:header}%<style type="text/css" media="all">
+.externalLink a:link,
+.externalLink a:visited,
+.externalLink a:hover {
+	background-image:url(%markerimage%);
+	background-repeat:no-repeat;
+	background-position:right;
+	padding-right:18px;
+</style>
+%TMPL:END%
