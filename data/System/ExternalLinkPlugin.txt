@@ -65,6 +65,7 @@ Unsurprisingly, local links won't be marked as being external. The following lin
 |  Version: | %$VERSION% |
 |  Release: | %$RELEASE% |
 |  Change History: | <!-- newest on top -->&nbsp; |
+|  31 Dec 2009 | v1.21 - fixed closing css declaration. |
 |  02 Oct 2009 | v1.20 - Ported to Foswiki; changed =img= HTML tag to CSS style; moved plugin settings to Configure.  |
 |  24 Apr 2006 | v1.11 - =%<nop>TOPIC% removed from =MARK= definition, wasn't expanded correctly. |
 |  23 Apr 2006 | v1.10 - Incorporated patch from TWiki:Main.TobiasRoeser (only mark external link once in an included scenario). Minor doc brush-up. Changed default marker to =external.gif= graphic. (TWiki:Main.SteffenPoulsen). |

@@ -19,7 +19,7 @@
 package Foswiki::Plugins::ExternalLinkPlugin;
 
 our $VERSION           = '$Rev$';
-our $RELEASE           = '1.20';
+our $RELEASE           = '1.21';
 our $NO_PREFS_IN_TOPIC = 1;
 our $SHORTDESCRIPTION  = 'Adds a visual indicator to outgoing links';
 our $pluginName = 'ExternalLinkPlugin';    # Name of this Plugin
